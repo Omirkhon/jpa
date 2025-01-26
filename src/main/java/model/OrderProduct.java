@@ -1,6 +1,5 @@
 package model;
 
-import enums.Role;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -8,25 +7,21 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 @ToString
 @Getter
 @Setter
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "users")
-public class User {
+@Table(name = "orders_products")
+public class OrderProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     int id;
-    @Enumerated(EnumType.ORDINAL)
-    Role role;
-    String login;
-    String password;
-    @Column(name = "registration_date")
-    LocalDateTime registrationDate;
-    @OneToMany
-    List<Order> orders;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    Order order;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    Product product;
+    int quantity;
 }

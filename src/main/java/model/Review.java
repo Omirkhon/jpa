@@ -25,8 +25,10 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "product_id")
     Product product;
+    @Column(name = "is_published")
     boolean isPublished;
     int rating;
     String content;
+    @Column(name = "publication_date")
     Date publicationDate;
 }

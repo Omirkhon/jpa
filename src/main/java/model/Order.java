@@ -8,8 +8,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @ToString
@@ -25,10 +25,11 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     User user;
-    @ManyToMany
-    final List<Product> products = new ArrayList<>();
     @Enumerated(EnumType.ORDINAL)
     OrderStatus status;
+    @OneToMany
+    List<OrderProduct> orderProducts;
     String address;
-    Date orderDate;
+    @Column(name = "order_date")
+    LocalDateTime orderDate;
 }

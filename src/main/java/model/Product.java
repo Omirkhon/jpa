@@ -28,9 +28,6 @@ public class Product {
     @OneToMany(mappedBy = "product")
     final List<Value> values = new ArrayList<>();
 
-    @ManyToMany
-    final List<Order> orders = new ArrayList<>();
-
     public void addValues(Value value) {
         values.add(value);
     }

@@ -39,10 +39,6 @@ public class ProductCreate {
         product.setPrice(price);
         product.setCategory(category);
 
-        for (Option option: category.getOptions()) {
-
-        }
-
         List<Value> values = category.getOptions().stream()
                 .map(option -> {
                     System.out.print(option.getName() + ": ");
