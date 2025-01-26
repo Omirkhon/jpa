@@ -27,6 +27,8 @@ public class User {
     String password;
     @Column(name = "registration_date")
     LocalDateTime registrationDate;
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     List<Order> orders;
+    @OneToMany(mappedBy = "user")
+    List<Review> reviews;
 }

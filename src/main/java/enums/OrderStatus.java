@@ -6,9 +6,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum OrderStatus {
-    ORDERED("", ""),
-    IN_DELIVERY("", ""),
-    DELIVERY("", "");
+    ORDERED("Заказан", "Ordered"),
+    IN_DELIVERY("Доставляется", "In delivery"),
+    DELIVERED("Доставлен", "Delivered");
 
     private final String displayName;
     private final String serverName;
