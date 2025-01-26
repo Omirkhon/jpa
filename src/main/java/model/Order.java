@@ -28,7 +28,7 @@ public class Order {
     @Enumerated(EnumType.ORDINAL)
     OrderStatus status;
     @OneToMany
-    List<OrderProduct> orderProducts;
+    List<OrderProduct> ordersProducts;
     String address;
     @Column(name = "order_date")
     LocalDateTime orderDate;
