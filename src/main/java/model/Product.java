@@ -27,7 +27,7 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     final List<Value> values = new ArrayList<>();
-    @OneToMany
+    @OneToMany(mappedBy = "product")
     List<OrderProduct> ordersProducts;
 
     public void addValues(Value value) {

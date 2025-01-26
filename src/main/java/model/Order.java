@@ -27,7 +27,7 @@ public class Order {
     User user;
     @Enumerated(EnumType.ORDINAL)
     OrderStatus status;
-    @OneToMany
+    @OneToMany(mappedBy = "order")
     List<OrderProduct> ordersProducts;
     String address;
     @Column(name = "order_date")

@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @ToString
 @Getter
@@ -30,5 +30,5 @@ public class Review {
     int rating;
     String content;
     @Column(name = "publication_date")
-    Date publicationDate;
+    LocalDateTime publicationDate;
 }
