@@ -3,6 +3,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import model.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class UserCreate {
         System.out.print("Введите логин: ");
         String login = scanner.nextLine();
         System.out.print("Введите пароль: ");
-        String password = scanner.nextLine();
+        String password = BCrypt.hashpw(scanner.nextLine(), BCrypt.gensalt());
 
         User user = new User();
         user.setLogin(login);
