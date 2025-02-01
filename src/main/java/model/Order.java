@@ -31,5 +31,5 @@ public class Order {
     List<OrderProduct> ordersProducts;
     String address;
     @Column(name = "order_date")
-    LocalDateTime orderDate;
+    LocalDateTime orderDate = LocalDateTime.now();
 }

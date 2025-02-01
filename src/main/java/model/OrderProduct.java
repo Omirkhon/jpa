@@ -23,5 +23,5 @@ public class OrderProduct {
     @ManyToOne
     @JoinColumn(name = "product_id")
     Product product;
-    int quantity;
+    int quantity = 0;
 }
